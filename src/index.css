@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-telugu: "Tiro Telugu", "Noto Serif Telugu", serif;
+
+  --color-cream: #f7f0e4;
+  --color-ivory: #fbf6ee;
+  --color-ink: #1c120c;
+  --color-ink-soft: #3f2e22;
+  --color-wine: #8f1d2c;
+  --color-wine-dark: #6a1420;
+  --color-gold: #c2782a;
+  --color-gold-light: #d4a15a;
+  --color-sage: #3d5c45;
+  --color-stone: #8a7460;
+  --color-mist: #ead9c4;
+}
+
+:root {
+  --page-gutter: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-gutter: 1.35rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-gutter: 1.85rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-gutter: 2.5rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  background: var(--color-ivory);
+}
+
+#about,
+#services,
+#menu,
+#why-us,
+#gallery,
+#testimonials,
+#contact {
+  scroll-margin-top: 2.75rem;
+}
+
+@media (min-width: 640px) {
+  #about,
+  #services,
+  #menu,
+  #why-us,
+  #gallery,
+  #testimonials,
+  #contact {
+    scroll-margin-top: 1.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #about,
+  #services,
+  #menu,
+  #why-us,
+  #gallery,
+  #testimonials,
+  #contact {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-inline: var(--page-gutter);
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-wine);
+  color: var(--color-ivory);
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.85s ease both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.7s ease both;
+  }
+
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-marquee {
+    animation: none;
+  }
+}
