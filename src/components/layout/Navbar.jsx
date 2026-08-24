@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 right-[var(--page-gutter)] left-[var(--page-gutter)] z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           solid
             ? 'border-b border-ink/5 bg-ivory/95 shadow-sm shadow-ink/5 backdrop-blur-md'
             : 'bg-transparent'
